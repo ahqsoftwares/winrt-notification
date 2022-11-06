@@ -254,7 +254,7 @@ impl Toast {
     ///
     /// May be done many times.
     /// Will appear below text.
-    pub fn image(mut self, source: &Path, alt_text: &str) -> Toast {
+    pub fn image(mut self, source: &str, alt_text: &str) -> Toast {
         if !windows_check::is_newer_than_windows81() {
             // win81 cannot have more than 1 image and shows nothing if there is more than that
             self.images = "".to_owned();
@@ -262,7 +262,7 @@ impl Toast {
         self.images = format!(
             r#"{}<image id="1" src="file:///{}" alt="{}" />"#,
             self.images,
-            escape_str_attribute(&source.display().to_string()),
+            source,
             escape_str_attribute(alt_text)
         );
         self
