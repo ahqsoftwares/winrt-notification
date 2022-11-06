@@ -227,8 +227,7 @@ impl Toast {
             );
             self
         } else {
-            // Win81 rejects the above xml so we fallback to a simpler call
-            self.image(source, alt_text)
+            self.image("", alt_text)
         }
     }
 
@@ -246,7 +245,7 @@ impl Toast {
             self
         } else {
             // win81 rejects the above xml so we fallback to a simpler call
-            self.image(source, alt_text)
+            self.image("", alt_text)
         }
     }
 

@@ -16,8 +16,8 @@ fn main() {
         .title("Lots of pictures here")
         .text1("One above the text as the hero")
         .text2("One to the left as an icon, and several below")
-        .image(&Path::new("c:/photos/sun.png"), "the sun")
-        .image(&Path::new("c:/photos/moon.png"), "the moon")
+        .image("", "the sun")
+        .image("", "the moon")
         .sound(None) // will be silent
         .show()
         .expect("notification failed");
